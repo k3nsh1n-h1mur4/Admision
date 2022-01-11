@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+
+
+{% block title %}
+    Listado Aspirantes
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container mt-5 container-fluid">
+    	<div class="row d-flex">
+    		<div class="col">
+    			<table class="table">
+					<caption>Listado Aspirantes</caption>
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Categoría</th>
+							<th scope="col">Edad</th>
+							<th scope="col">Zona</th>
+							<th scope="col">Parentesco</th>
+							<th scope="col">Domicilio</th>
+							<th scope="col">Teléfono</th>
+							<!---<th scope="col">Correo</th>--->
+							<!---<th scope="col">Red Social</th>--->
+							<th scope="col">Operaciones</th>
+						</tr>
+					</thead>
+					{% for ct in resp %}
+					<tbody>
+						<tr>
+							<td>{{ ct.nombre }}</td>
+							<td>{{ ct.categoriaA }}</td>
+							<td>{{ ct.edad }}</td>
+							<td>{{ ct.zona }}</td>
+							<td>{{ ct.parentesco }}</td>
+							<td>{{ ct.domicilio }}</td>
+							<td>{{ ct.telefono }}</td>
+							<!---<td>{{ ct.correo }}</td>--->
+							<!---<td>{{ ct.rSocial }}</td>--->
+							<td><a href="{% url 'updateCandidate' ct.id %}" class="btn btn-warning" title="edit">Editar</a>
+								<a href="{% url 'deleteCandidate' ct.id %}" class="btn btn-danger" title="delete">Eliminar</a>		
+							</td>
+							
+									
+						</tr>
+					</tbody>
+					{% endfor %}
+				</table>
+    		</div>
+    	</div>
+    </div>
+{% endblock content %}	

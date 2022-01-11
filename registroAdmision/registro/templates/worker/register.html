@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+	Registro Trabajador
+{% endblock title %}
+
+
+
+{% block content %}
+
+	<div class="container mt-5">
+		<h1>Registro Trabajador</h1>
+		<div class="row">
+			<div class="col">
+				<form action="" method="post" accept-charset="utf-8">
+					{% csrf_token %}
+
+					<div class="form-group">
+						<label for="folio">Folio</label>
+						<input type="text" name="folio" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="nombre">Nombre</label>
+						<input type="text" name="nombre" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="categoria">Categoría</label>
+						<input type="text" name="categoria" class="form-control">
+					</div>
+					
+					<div class="form-group">
+						<label for="matricula">Matrícula</label>
+						<input type="text" name="matricula" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="uadscripcion">Unidad de Adscripción</label>
+						<input type="text" name="uadscripcion" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="antiguedad">Antiguedad</label>
+						<input type="text" name="antiguedad" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="tipoC">Tipo Contratación</label>
+						<input type="text" name="tipoC" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="domicilio">Domicilio</label>
+						<input type="text" name="domicilio" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="telefono">Teléfono</label>
+						<input type="text" name="telefono" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="correo">Correo</label>
+						<input type="text" name="correo" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="rSocial">Red Social</label>
+						<input type="text" name="rSocial" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="nPropuesta"> # Propuesta</label>
+						<input type="text" name="nPropuesta" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="created_at">Creado</label>
+						<input type="date" name="created_at" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="user_id">Enlace</label>
+						<input type="text" name="user_id" class="form-control" value="{{ user.id }}">
+					</div>
+
+
+
+					<button type="submit" class="btn btn-primary">Guardar</button>
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

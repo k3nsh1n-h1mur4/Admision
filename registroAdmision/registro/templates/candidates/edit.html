@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Editar Candidato
+{% endblock title %}
+
+
+{% block content %}
+    
+	<div class="container mt-5">
+		<h1>Editar Candidato</h1>
+		<div class="row">
+			<div class="col">
+				<form method="post">
+					{% csrf_token %}
+
+										
+					<div class="form-group">
+						<label for="nombre">Nombre</label>
+						<input type="text" name="nombre" class="form-control" value="{{ id.nombre }}">
+					</div>
+
+					<div class="form-group">
+						<label for="categoriaA">Categoría Aspirante</label>
+						<input type="text" name="categoriaA" class="form-control" value="{{ id.categoriaA }}">
+					</div>
+
+					<div class="form-group">
+						<label for="edad">Edad</label>
+						<input type="text" name="edad" class="form-control" value="{{ id.edad }}">
+					</div>
+
+					<div class="form-group">
+						<label for="zona">Zona</label>
+						<input type="text" name="zona" class="form-control" value="{{ id.zona }}">
+					</div>
+
+					<div class="form-group">
+						<label for="parentesco">Parentesco</label>
+						<input type="text" name="parentesco" class="form-control" value="{{ id.parentesco }}">
+					</div>
+
+					<div class="form-group">
+						<label for="domicilio">Domicilio</label>
+						<input type="text" name="domicilio" class="form-control" value="{{ id.domicilio }}">
+					</div>
+
+					<div class="form-group">
+						<label for="telefono">Teléfono</label>
+						<input type="text" name="telefono" class="form-control" value="{{ id.telefono }}">
+					</div>
+
+					<div class="form-group">
+						<label for="correo">Correo</label>
+						<input type="email" name="correo" class="form-control" value="{{ id.correo }}">
+					</div>
+
+					<div class="form-group">
+						<label for="rSocial">Red Social</label>
+						<input type="text" name="rSocial" class="form-control" value="{{ id.rSocial }}">
+					</div>
+
+					<div class="form-group">
+						<label for="created_at">Creado</label>
+						<input type="date" name="created_at" class="form-control" value="{{ id.created_at }}">
+					</div>
+
+					<div class="form-group">
+						<label for="worker_id">Enlace</label>
+						<input type="text" name="worker_id" class="form-control" value="{{ id.id }}">
+					</div>
+
+					<button type="submit" class="btn btn-primary">Guardar</button>
+					
+				</div>	
+			</div>
+		</div>
+</form>
+{% endblock content %}

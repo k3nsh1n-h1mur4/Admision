@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Listado General
+{% endblock title %}
+
+
+{% block content %}
+	
+	<div class="container container-fluid mt-5">
+		<div class="row justify-content-start">
+			<div class="col">
+				<table class="table"
+					<caption>Listado Trabajadores</caption>
+					<thead>
+						<tr>
+							<th scope="col">Folio</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Categoría</th>
+							<th scope="col">Matrícula</th>
+							<th scope="col">Unidad Adscripción</th>
+							<th scope="col">Antiguedad</th>
+							<th scope="col">Tipo Contratación</th>
+							<th scope="col"># Propuesta</th>	
+							<!---<th scope="col">Email</th>--->
+							<th scope="col">Operaciones</th>
+						</tr>
+					</thead>
+					{% for ct in ctx %}
+					<tbody>
+						<tr>
+							<td>{{ ct.folio }}</td>
+							<td>{{ ct.nombre }}</td>
+							<td>{{ ct.categoria }}</td>
+							<td>{{ ct.matricula }}</td>
+							<td>{{ ct.uadscripcion }}</td>
+							<td>{{ ct.antiguedad }}</td>
+							<td>{{ ct.tipoC }}</td>
+							<td>{{ ct.nPropuesta }}</td>
+							<!---<td>{{ ct.correo }}</td>--->
+							<td><a href="{% url 'updateWorkers' ct.id %} " class="btn btn-warning" title="edit">Editar</a></td>
+							<td><a href="delete/{{ ct.id }}" class="btn btn-danger">Delete</a></td>
+							<td><a href="{% url 'registroCandidate' ct.id %}" class="btn btn-secondary">Registrar Aspirante</a></td>
+						</tr>
+					</tbody>
+					{% endfor %}
+				</table>
+			</div>			
+		</div>		
+	</div>
+{% endblock content %}
